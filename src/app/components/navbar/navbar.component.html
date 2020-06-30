@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Shopping</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link " routerLink="/" routerLinkActive="Active">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" routerLink="/account" routerLinkActive="Active">Account</a>
+        <a class="nav-item nav-link" routerLink="/cart" routerLinkActive="Active">Cart</a>
+        <a class="nav-item nav-link" routerLink="/orders" routerLinkActive="Active">Orders</a>
+        <a class="nav-item nav-link" routerLink="/products" routerLinkActive="Active">products</a>
+        <a class="nav-item nav-link" routerLink="/login" routerLinkActive="Active" *ngIf="!this.authService.isLoggedIn()">Login</a>
+        <a class="nav-item nav-link" routerLink="/sign-up" routerLinkActive="Active" *ngIf="!this.authService.isLoggedIn()">Signup</a>
+        <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="Active" *ngIf="this.authService.isLoggedIn()">Profile</a>
+        <a class="btn btn-danger" routerLink="/logout" routerLinkActive="Active" *ngIf="this.authService.isLoggedIn()" (click)="logout()">Logout</a>
+        <!-- <a class="nav-item nav-link" routerLink="/login" routerLinkActive="Active" >Login</a>
+        <a class="nav-item nav-link" routerLink="/sign-up" routerLinkActive="Active" >Signup</a>
+        <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="Active" >Profile</a>
+        <a class="btn btn-danger" routerLink="/logout" routerLinkActive="Active"  (click)="logout()">Logout</a> -->
+
+
+        <!-- <a class="nav-item nav-link" routerLink="/login" routerLinkActive="Active" *ngIf="!this.authService.isLoggedIn">Login</a>
+        <a class="nav-item nav-link" routerLink="/sign-up" routerLinkActive="Active" *ngIf="!this.authService.isLoggedIn">Signup</a>
+        <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="Active" *ngIf="this.authService.isLoggedIn">Profile</a>
+        <a class="btn btn-danger" routerLink="/logout" routerLinkActive="Active" *ngIf="this.authService.isLoggedIn" (click)="logout()">Logout</a> -->
+      </div>
+    </div>
+  </nav>
